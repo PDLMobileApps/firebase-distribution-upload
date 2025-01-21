@@ -1,7 +1,7 @@
 # Firebase Distribution Upload
-This action uploads a file (apk, aab or ipa) to Firebase Distribution.
+This action uploads a build file (apk, aab or ipa) to Firebase Distribution.
 
-Note that `firebase-cli` has to be installed in your runner for this action to work. See [Setup Firebase CLI](https://github.com/marketplace/actions/setup-firebase-cli) or other similar actions for details.
+Note that `firebase-cli` has to be installed in your runner for this action to work. See [Setup Firebase CLI](https://github.com/marketplace/actions/setup-firebase-cli) or other similar Github actions for details.
 
 ## Inputs
 
@@ -11,12 +11,14 @@ Note that `firebase-cli` has to be installed in your runner for this action to w
 
 ### `token`
 
-⚠️ Deprecated! Use `serviceCredentialsFileContent` instead. [How to generate one](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration).
+⚠️ Deprecated! Use `serviceCredentialsFileContent` instead. See [FIREBASE_TOKEN migration
+](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration) for details.
 
 ~**Required** Upload token - See Firebase CLI Reference (run `firebase login:ci` command to get your token).~
 
 ### `serviceCredentialsFileContent`
-**Required** Content of Service Credentials private key JSON file. [How to generate one](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration).
+**Required** Content of Service Credentials private key JSON file. See [FIREBASE_TOKEN migration
+](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration) for details.
 
 ### `file`
 
@@ -55,4 +57,4 @@ jobs:
 
 ## Credits
 
-This works is based on the Github action [wzieba/Firebase-Distribution-Github-Action](https://github.com/wzieba/Firebase-Distribution-Github-Action/)
+This work is based on the Github action [wzieba/Firebase-Distribution-Github-Action](https://github.com/wzieba/Firebase-Distribution-Github-Action/)
