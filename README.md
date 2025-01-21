@@ -1,4 +1,4 @@
-# firebase-distribution-upload
+# Firebase Distribution Upload
 This action uploads a file (apk, aab or ipa) to Firebase Distribution.
 
 Note that `firebase-cli` has to be installed in your runner for this action to work. See [Setup Firebase CLI](https://github.com/marketplace/actions/setup-firebase-cli) or other similar actions for details.
@@ -11,7 +11,12 @@ Note that `firebase-cli` has to be installed in your runner for this action to w
 
 ### `token`
 
-**Required** Upload token - See Firebase CLI Reference (run `firebase login:ci` command to get your token).
+⚠️ Deprecated! Use `serviceCredentialsFileContent` instead. [How to generate one](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration).
+
+~**Required** Upload token - See Firebase CLI Reference (run `firebase login:ci` command to get your token).~
+
+### `serviceCredentialsFileContent`
+**Required** Content of Service Credentials private key JSON file. [How to generate one](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration).
 
 ### `file`
 
