@@ -25,7 +25,12 @@ runs:
   steps:
     - name: Upload to Firebase Distribution
       run: |
-        serviceCredentials="${{ inputs.serviceCredentialsFileContent }}"
+        # Needed as serviceCredentialsFileContent is multiline
+        serviceCredentials=$(cat <<EOF
+        ${{ inputs.serviceCredentialsFileContent }}
+        EOF
+        )
+        
         if [ -n "$serviceCredentials" ]; then
           echo "$serviceCredentials" > service_credentials_content.json
           export GOOGLE_APPLICATION_CREDENTIALS="service_credentials_content.json"
