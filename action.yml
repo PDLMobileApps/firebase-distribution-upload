@@ -25,9 +25,10 @@ runs:
   steps:
     - name: Upload to Firebase Distribution
       run: |
-        if [ -n "${{ inputs.serviceCredentialsFileContent }}" ] ; then
-            cat <<< "${{ inputs.serviceCredentialsFileContent }}" > service_credentials_content.json
-            export GOOGLE_APPLICATION_CREDENTIALS="service_credentials_content.json"
+        serviceCredentials="${{ inputs.serviceCredentialsFileContent }}"
+        if [ -n "$serviceCredentials" ]; then
+          echo "$serviceCredentials" > service_credentials_content.json
+          export GOOGLE_APPLICATION_CREDENTIALS="service_credentials_content.json"
         fi
 
         if [ -n "${{ inputs.token }}" ] ; then
